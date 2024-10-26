@@ -1,17 +1,41 @@
 package org.example;
 
-//TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
-// click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
+import java.util.Scanner;
+
 public class Main {
     public static void main(String[] args) {
-        //TIP Press <shortcut actionId="ShowIntentionActions"/> with your caret at the highlighted text
-        // to see how IntelliJ IDEA suggests fixing it.
-        System.out.printf("Hello and welcome!");
+        Main pStudio = new Main();
+        pStudio.J101();
+    }
 
-        for (int i = 1; i <= 5; i++) {
-            //TIP Press <shortcut actionId="Debug"/> to start debugging your code. We have set one <icon src="AllIcons.Debugger.Db_set_breakpoint"/> breakpoint
-            // for you, but you can always add more by pressing <shortcut actionId="ToggleLineBreakpoint"/>.
-            System.out.println("i = " + i);
-        }
+    public void printMenu(){
+        System.out.print("[Menu] 1. List  2. List(level)  3. Search  4.Add  5.Modify  6.Delete  7.Save file 0.Exit >> ");
+    }
+
+    public void J101(){
+        Scanner sc = new Scanner(System.in);
+        WordCRUD manager = new WordCRUD();
+        boolean quit = false;
+        do{
+            printMenu();
+            int menu = sc.nextInt();
+            switch (menu){
+                case 0:
+                    quit = true;
+                    break;
+
+                case 1:
+                    manager.printItem();
+                    break;
+
+                case 4:
+                    manager.addItem();
+                    break;
+
+                default:
+                    System.out.println("Wrong number.\n");
+                    break;
+            }
+        }while(!quit);
     }
 }
