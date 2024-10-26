@@ -112,8 +112,6 @@ public class WordCRUD implements iCRUD {
 
     @Override
     public int printItem() {
-        Scanner sc = new Scanner(System.in);
-
         System.out.println("Total " + this.list.size() + " words");
         for (WordItem item : this.list) {
             System.out.println(item.toString());
@@ -121,6 +119,20 @@ public class WordCRUD implements iCRUD {
         System.out.println();
         return 0;
     }
+
+    public void printItemByLevel() {
+        System.out.println("Words with level");
+        for(int i=1;i<=10;i++){
+            System.out.println("level "+ i +" [");
+            for (WordItem item : list) {
+                if (item.getLevel() == i) {
+                    System.out.println(item.toString());
+                }
+            }
+            System.out.println("]\n");
+        }
+    }
+
 
     public WordItem findId(int id){
         for (WordItem item : this.list) {
