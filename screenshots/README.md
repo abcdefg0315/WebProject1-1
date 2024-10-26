@@ -1,1 +1,1 @@
-<img src="이미지_파일_URL" alt="이미지 설명" width="넓이" height="높이">
+<img src="img.png" alt="addItem" width="200">
