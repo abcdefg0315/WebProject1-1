@@ -39,6 +39,10 @@ public class Main {
                     manager.printItemByLevel();
                     break;
 
+                case 3:
+                    manager.searchByName();
+                    break;
+
                 case 4:
                     manager.addItem();
                     break;

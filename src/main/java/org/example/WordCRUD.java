@@ -158,4 +158,22 @@ public class WordCRUD implements iCRUD {
             System.out.println(e);
         }
     }
+
+    public void searchByName() {
+        Scanner sc = new Scanner(System.in);
+        System.out.print("Enter the name to search: ");
+        String name = sc.nextLine().trim();
+        WordItem i = null;
+        for (WordItem item : this.list) {
+            if (item.getWord().equalsIgnoreCase(name)) {
+                i = item;
+                break;
+            }
+        }
+        if (i != null) {
+            System.out.println(i);
+        } else {
+            System.out.println("Word not found.");
+        }
+    }
 }
