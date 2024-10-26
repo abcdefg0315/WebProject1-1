@@ -3,3 +3,5 @@
 3/4/charity/자선단체
 4/3/portrait/초상화
 5/9/hole-and-corner/비밀리에 하는
+6/1/apple/사과
+7/1/banana/바나나

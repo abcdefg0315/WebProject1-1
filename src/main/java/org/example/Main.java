@@ -27,6 +27,7 @@ public class Main {
             int menu = sc.nextInt();
             switch (menu){
                 case 0:
+                    System.out.println("Good bye!");
                     quit = true;
                     break;
 
@@ -36,6 +37,18 @@ public class Main {
 
                 case 4:
                     manager.addItem();
+                    break;
+
+                case 5:
+                    manager.updateItem();
+                    break;
+
+                case 6:
+                    manager.deleteItem();
+                    break;
+
+                case 7:
+                    manager.saveData();
                     break;
 
                 default:
