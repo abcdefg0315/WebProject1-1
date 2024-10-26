@@ -1,5 +1,6 @@
 package org.example;
 
+import java.io.IOException;
 import java.util.Scanner;
 
 public class Main {
@@ -15,6 +16,11 @@ public class Main {
     public void J101(){
         Scanner sc = new Scanner(System.in);
         WordCRUD manager = new WordCRUD();
+        try {
+            manager.loadData();
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
         boolean quit = false;
         do{
             printMenu();

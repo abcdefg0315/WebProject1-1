@@ -10,6 +10,21 @@ public class WordCRUD implements iCRUD {
         this.list = new ArrayList<WordItem>();
     }
 
+    public void loadData() throws IOException {
+        File file = new File("C:\\Users\\ssj49\\IdeaProjects\\WordCRUD\\data.txt");
+        FileReader fr = new FileReader(file);
+        BufferedReader br = new BufferedReader(fr);
+
+        String line;
+
+        while((line = br.readLine()) != null) {
+            String[] lines = line.split("/");
+            WordItem item = new WordItem(Integer.valueOf(lines[0]),Integer.valueOf(lines[1]),lines[2],lines[3]);
+            list.add(item);
+        }
+        br.close();
+    }
+
     @Override
     public int addItem() {
         Scanner sc = new Scanner(System.in);
@@ -45,6 +60,13 @@ public class WordCRUD implements iCRUD {
 
     @Override
     public int printItem() {
+        Scanner sc = new Scanner(System.in);
+
+        System.out.println("Total " + this.list.size() + " words");
+        for (WordItem item : this.list) {
+            System.out.println(item.toString());
+        }
+
         return 0;
     }
 }

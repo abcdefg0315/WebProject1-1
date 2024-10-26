@@ -47,11 +47,10 @@ public class WordItem{
 
     @Override
     public String toString() {
-        return "WordItem{" +
-                "id=" + id +
-                ", level=" + level +
-                ", word='" + word + '\'' +
-                ", meaning='" + meaning + '\'' +
-                '}';
+        return String.format("%-10s", "id= " + id) +
+                String.format("%-12s", "level= " + level) +
+                String.format("%-23s", "word= " + word) +
+                String.format("%-30s", "meaning= " + meaning);
     }
+
 }
