@@ -1,1 +1,1 @@
-<img src="img.png" alt="addItem" width="200">
+<img src="img.png" alt="addItem" width="400">
